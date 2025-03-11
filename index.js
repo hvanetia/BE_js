@@ -1,5 +1,7 @@
 import express from "express";
+import dotenv from "dotenv";
 
+dotenv.config()
 const app = express();
 
 app.get("/health", (req, res) => {
@@ -10,6 +12,6 @@ app.get("/health", (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log("listening on 3000")
 })
